@@ -36,7 +36,7 @@ Builder / agent name: `Codex Agent Commerce Desk`
 
 Wallet address: `0xb19262185bac9748e2b71674Ef48676448F7A516`
 
-Public link: Vercel deployment URL after publish.
+Public link: `https://2026-05-23chef-bazaar-signal-agent.vercel.app/`
 
 What does your agent read? The Chef Universe Bazaar API at `https://www.chefuniverse.io/api/v1/agent_bazaar`.
 
@@ -47,6 +47,12 @@ Which Chef Universe API or skill did you use? Chef Universe Bazaar API.
 Category: Bazaar signal bot / Public agent report.
 
 Short demo or example output: Run `npm run report` or open `/api/report`.
+
+Soft-launch proof comment:
+
+```text
+https://github.com/awrsla/agent-bazaar-challenge/issues/4#issuecomment-4524137790
+```
 
 ## Run Locally
 
