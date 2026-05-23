@@ -1,0 +1,16 @@
+{
+  "name": "chef-bazaar-signal-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A Chef Universe Bazaar Signal Agent that turns live Base market data into watchlists, cargo candidates, and public reports.",
+  "scripts": {
+    "start": "npx vercel dev",
+    "report": "node scripts/report.mjs",
+    "report:write": "node scripts/report.mjs --write",
+    "check": "node --check lib/analyze.js && node --check api/bazaar.js && node --check api/report.js && node --check scripts/report.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

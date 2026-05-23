@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Galleywatch reads the Chef Universe Bazaar API and produces public Ingredient Token signal reports.">
+    <title>Galleywatch Bazaar Signal Agent</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="mast">
+        <div>
+          <p class="kicker">Chef Universe Agent Builder Challenge</p>
+          <h1>Galleywatch Bazaar Signal Agent</h1>
+          <p class="dek">A live agent report that reads the Bazaar API, ranks Ingredient Token signals, and turns the current Base market snapshot into watchlists, cargo candidates, and risk notes.</p>
+        </div>
+        <div class="reward-card" aria-label="Reward wallet">
+          <span>Reward wallet</span>
+          <code>0xb19262185bac9748e2b71674Ef48676448F7A516</code>
+          <strong>USDC on Base</strong>
+        </div>
+      </section>
+
+      <section class="status-strip" aria-live="polite">
+        <div>
+          <span>Posture</span>
+          <strong id="posture">Loading</strong>
+        </div>
+        <div>
+          <span>Ingredients</span>
+          <strong id="ingredient-count">--</strong>
+        </div>
+        <div>
+          <span>Block</span>
+          <strong id="block-number">--</strong>
+        </div>
+        <div>
+          <span>Snapshot</span>
+          <strong id="snapshot-time">--</strong>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel watch-panel">
+          <header>
+            <p class="kicker">Signal Bot</p>
+            <h2>Watchlist</h2>
+          </header>
+          <div id="watchlist" class="rows"></div>
+        </article>
+
+        <article class="panel">
+          <header>
+            <p class="kicker">Cargo Planner</p>
+            <h2>Route Candidates</h2>
+          </header>
+          <canvas id="cargo-chart" width="820" height="300" aria-label="Cargo score chart"></canvas>
+          <div id="cargo-list" class="compact-list"></div>
+        </article>
+
+        <article class="panel">
+          <header>
+            <p class="kicker">Risk Radar</p>
+            <h2>Flags</h2>
+          </header>
+          <div id="risk-list" class="compact-list"></div>
+        </article>
+
+        <article class="panel report-panel">
+          <header>
+            <p class="kicker">Public Output</p>
+            <h2>Agent Report</h2>
+          </header>
+          <pre id="report">Fetching live Bazaar data...</pre>
+          <div class="actions">
+            <a href="/api/bazaar">Agent JSON</a>
+            <a href="/api/report">Markdown Report</a>
+            <a href="https://github.com/awrsla/agent-bazaar-challenge">Challenge</a>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
