@@ -1,0 +1,75 @@
+{
+  "schema": "galleywatch.replay.v1",
+  "generatedAt": "2026-05-24T02:26:30.170Z",
+  "fetchedAt": "2026-05-24T02:27:34.449Z",
+  "sourceMode": "live-api",
+  "sourceFile": null,
+  "sourceUrl": "https://www.chefuniverse.io/api/v1/agent_bazaar",
+  "sourceGeneratedAt": "2026-05-24T02:26:30.170Z",
+  "blockNumber": 46397361,
+  "nodeVersion": "v23.3.0",
+  "commands": {
+    "live": "npm install && npm run report:write",
+    "pinnedReplay": "npm install && npm run report:replay"
+  },
+  "files": {
+    "rawSnapshot": "replay/latest/raw-snapshot.json",
+    "analysis": "replay/latest/analysis.json",
+    "report": "replay/latest/report.md"
+  },
+  "sha256": {
+    "rawSnapshot": "9c094ed9fcfb3557ce5ea6dfd446e7f699cd5fdeff032166cbe7c71bacd5d8f3",
+    "analysisJson": "17377003d55d0640c116bef7a9e034df68ee522a7ca36721bb65077b8108d032",
+    "reportMarkdown": "64a85e7a93dc0cb7646e5fa5a31d83afaf4c3e5d190991c3880a857806338b76"
+  },
+  "scoringPolicy": {
+    "watchScore": "named signal score * 100 + average 24h/12h momentum clamped [-30,30] + log10(24h CHEF volume + 1) * 7 clamped [0,55] + supply progress * 22 clamped [0,22] - 8 when top buyer concentration is above 85%.",
+    "cargoScore": "grade/current_price_chef value density clamped [0,45] + liquidity score clamped [0,50] + supply window bonus: 18 while progress is between 0 and 82%, 6 at or above 82%, otherwise 8.",
+    "riskNotes": "Flags sparse observed fields, buyer concentration at or above 90%, 24h price change at or below -8%, 10k CHEF partial-fill routes, and zero/unknown 24h volume."
+  },
+  "provenance": {
+    "observed": [
+      "Chef Universe Bazaar API URL",
+      "snapshot generated_at and block_number",
+      "ingredient ticker/address/emoji",
+      "grade, current_price_chef, progress",
+      "volume_24h_chef, price_change_24h_pct, price_change_12h_pct",
+      "top_buyer_concentration_24h_pct",
+      "liquidity_impact_10k_chef fields",
+      "named signals and signal notes"
+    ],
+    "inferred": [
+      "watchScore",
+      "cargoScore",
+      "market posture",
+      "risk notes",
+      "ranked watchlist and cargo candidates"
+    ],
+    "notChecked": [
+      "private Chef Universe/community signals",
+      "wallet balances or holdings",
+      "liquidity outside the public Bazaar API",
+      "future price or profit",
+      "Discord, Telegram, or X sentiment",
+      "real swaps, transfers, or order execution"
+    ]
+  },
+  "dataQuality": {
+    "sourceAgeMinutes": 0,
+    "missingCounts": {
+      "ticker": 0,
+      "address": 0,
+      "emoji": 0,
+      "grade": 0,
+      "current_price_chef": 0,
+      "progress": 0,
+      "volume_24h_chef": 0,
+      "price_change_24h_pct": 27,
+      "price_change_12h_pct": 27,
+      "top_buyer_concentration_24h_pct": 0,
+      "liquidity_impact_10k_chef": 0,
+      "signals": 0
+    },
+    "missingFieldPolicy": "Observed missing fields are retained as null in summaries. Scoring helpers use neutral fallbacks only for calculations and sparse rows are flagged in risk notes."
+  }
+}

@@ -1,0 +1,766 @@
+{
+  "generatedAt": "2026-05-24T02:26:30.170Z",
+  "sourceGeneratedAt": "2026-05-24T02:26:30.170Z",
+  "blockNumber": 46397361,
+  "sourceUrl": "https://www.chefuniverse.io/api/v1/agent_bazaar",
+  "globalAsset": {
+    "symbol": "CHEF",
+    "address": "0xc4a09803e2e1a491cb3119b891dcf890e3c98b07",
+    "price_usd": 5.39621476397589e-7,
+    "price_weth": null,
+    "marco_polo_vault_chef": 0,
+    "total_locked_chef": 185139128.0733412,
+    "current_price_chef": 0,
+    "current_supply": 0,
+    "max_supply": 0,
+    "progress": 0,
+    "curve_steps": []
+  },
+  "ingredientCount": 31,
+  "posture": "selective",
+  "dataQuality": {
+    "sourceAgeMinutes": 0,
+    "missingCounts": {
+      "ticker": 0,
+      "address": 0,
+      "emoji": 0,
+      "grade": 0,
+      "current_price_chef": 0,
+      "progress": 0,
+      "volume_24h_chef": 0,
+      "price_change_24h_pct": 27,
+      "price_change_12h_pct": 27,
+      "top_buyer_concentration_24h_pct": 0,
+      "liquidity_impact_10k_chef": 0,
+      "signals": 0
+    },
+    "missingFieldPolicy": "Observed missing fields are retained as null in summaries. Scoring helpers use neutral fallbacks only for calculations and sparse rows are flagged in risk notes."
+  },
+  "provenance": {
+    "observed": [
+      "Chef Universe Bazaar API URL",
+      "snapshot generated_at and block_number",
+      "ingredient ticker/address/emoji",
+      "grade, current_price_chef, progress",
+      "volume_24h_chef, price_change_24h_pct, price_change_12h_pct",
+      "top_buyer_concentration_24h_pct",
+      "liquidity_impact_10k_chef fields",
+      "named signals and signal notes"
+    ],
+    "inferred": [
+      "watchScore",
+      "cargoScore",
+      "market posture",
+      "risk notes",
+      "ranked watchlist and cargo candidates"
+    ],
+    "notChecked": [
+      "private Chef Universe/community signals",
+      "wallet balances or holdings",
+      "liquidity outside the public Bazaar API",
+      "future price or profit",
+      "Discord, Telegram, or X sentiment",
+      "real swaps, transfers, or order execution"
+    ]
+  },
+  "scoringPolicy": {
+    "watchScore": "named signal score * 100 + average 24h/12h momentum clamped [-30,30] + log10(24h CHEF volume + 1) * 7 clamped [0,55] + supply progress * 22 clamped [0,22] - 8 when top buyer concentration is above 85%.",
+    "cargoScore": "grade/current_price_chef value density clamped [0,45] + liquidity score clamped [0,50] + supply window bonus: 18 while progress is between 0 and 82%, 6 at or above 82%, otherwise 8.",
+    "riskNotes": "Flags sparse observed fields, buyer concentration at or above 90%, 24h price change at or below -8%, 10k CHEF partial-fill routes, and zero/unknown 24h volume."
+  },
+  "replay": {
+    "fetchedAt": "2026-05-24T02:27:34.449Z",
+    "rawSnapshotSha256": "9c094ed9fcfb3557ce5ea6dfd446e7f699cd5fdeff032166cbe7c71bacd5d8f3",
+    "rawSnapshotFile": "replay/latest/raw-snapshot.json",
+    "manifestFile": "replay/latest/manifest.json",
+    "sourceMode": "live-api"
+  },
+  "topSignals": [
+    {
+      "ticker": "cfAVOCADO",
+      "kind": "VOLUME_SPIKE_24H",
+      "score": 1,
+      "note": "24h vol 6.8× daily season avg"
+    },
+    {
+      "ticker": "cfAVOCADO",
+      "kind": "MOMENTUM_12H",
+      "score": 0.16329772756028663,
+      "note": "+28.9% in 12h"
+    }
+  ],
+  "watchlist": [
+    {
+      "ticker": "cfAVOCADO",
+      "address": "0x6f2dfeb089c5eb81b22256a17fdb6eb1830c4072",
+      "emoji": "🥑",
+      "grade": 4,
+      "priceChef": 0.3126315206840646,
+      "supplyProgress": 0.2683831950959967,
+      "volume24hChef": 4741726.681636055,
+      "change24hPct": 23.24730682487623,
+      "change12hPct": 28.880306842624364,
+      "topBuyerConcentration24hPct": 91.1,
+      "watchScore": 187.03,
+      "cargoScore": 91,
+      "signals": [
+        "VOLUME_SPIKE_24H",
+        "MOMENTUM_12H"
+      ],
+      "missingFields": [],
+      "notes": [
+        "24h vol 6.8× daily season avg",
+        "+28.9% in 12h",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfCAVIAR",
+      "address": "0x3b5938a5cb4c047ccf20721dd94a40f236696a1c",
+      "emoji": "🫧",
+      "grade": 5,
+      "priceChef": 3.3854077296372087,
+      "supplyProgress": 0.46080175510059396,
+      "volume24hChef": 1658583.6334610337,
+      "change24hPct": 7.957399003982592,
+      "change12hPct": 7.957399003982592,
+      "topBuyerConcentration24hPct": 99,
+      "watchScore": 53.63,
+      "cargoScore": 50.2,
+      "signals": [],
+      "missingFields": [],
+      "notes": [
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfWHEAT",
+      "address": "0x96cc7e5b9626880db5564cad60092e1b31a3a381",
+      "emoji": "🌾",
+      "grade": 1,
+      "priceChef": 0.003553529299168404,
+      "supplyProgress": 0.2766166821859162,
+      "volume24hChef": 91070166.86058794,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 100,
+      "watchScore": 53.09,
+      "cargoScore": 113,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfCHEESE",
+      "address": "0xda5d0db1c397a8d64d92244a44be47a44e6b965c",
+      "emoji": "🧀",
+      "grade": 3,
+      "priceChef": 0.0221730324028944,
+      "supplyProgress": 0.13165254786155425,
+      "volume24hChef": 13836259.886276886,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 52.88,
+      "cargoScore": 108.23,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfTRUFFLE",
+      "address": "0xe52b5af5156494c28e8e34c54617ebcf0c7ef544",
+      "emoji": "🍄",
+      "grade": 5,
+      "priceChef": 3.333960874867424,
+      "supplyProgress": 0.45861001439707644,
+      "volume24hChef": 233635.0486083958,
+      "change24hPct": 5.935096664814321,
+      "change12hPct": 2.4340770791075603,
+      "topBuyerConcentration24hPct": 80,
+      "watchScore": 51.85,
+      "cargoScore": 50.32,
+      "signals": [],
+      "missingFields": [],
+      "notes": []
+    },
+    {
+      "ticker": "cfTOMATO",
+      "address": "0xb15117d7308d967d05bd5281a0318ba54cb024cf",
+      "emoji": "🍅",
+      "grade": 2,
+      "priceChef": 0.01014430493188797,
+      "supplyProgress": 0.13340280759442902,
+      "volume24hChef": 6917955.0990373995,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 50.81,
+      "cargoScore": 110.95,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfSESAME",
+      "address": "0x24d229a443d0e35eab681530a9ab01fb77e00adc",
+      "emoji": "⚪",
+      "grade": 2,
+      "priceChef": 0.009310641257229921,
+      "supplyProgress": 0.11690196852233295,
+      "volume24hChef": 7112089.26031918,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 84.1,
+      "watchScore": 50.54,
+      "cargoScore": 111.25,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfCHICKEN",
+      "address": "0xbe4305fc90f96e8fce6374b692f9899fa916ba5b",
+      "emoji": "🍗",
+      "grade": 2,
+      "priceChef": 0.009718538162952137,
+      "supplyProgress": 0.12495051234511796,
+      "volume24hChef": 6667154.368989602,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 50.52,
+      "cargoScore": 111.1,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfRICE",
+      "address": "0x03bbc2fbdb6b1d3e95fb230391b278aeea8afad1",
+      "emoji": "🍚",
+      "grade": 2,
+      "priceChef": 0.009614918485080634,
+      "supplyProgress": 0.12304606648891611,
+      "volume24hChef": 6650142.100555415,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 50.47,
+      "cargoScore": 111.14,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfEGG",
+      "address": "0x90f8f94b8d0a2c058354f008236d1d723e5e344e",
+      "emoji": "🥚",
+      "grade": 2,
+      "priceChef": 0.009614918485080634,
+      "supplyProgress": 0.12342194398707967,
+      "volume24hChef": 6577994.831279334,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 50.44,
+      "cargoScore": 111.14,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    }
+  ],
+  "cargoCandidates": [
+    {
+      "ticker": "cfMEATMIX",
+      "address": "0xbef4f77339a6b76d4c73c911ab1fcb5bb0c6bb55",
+      "emoji": "🍖",
+      "grade": 1,
+      "priceChef": 0.00165754719339294,
+      "supplyProgress": 0.11034275964873515,
+      "volume24hChef": 3332380.2725021527,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 48.09,
+      "cargoScore": 113,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfFRUITMIX",
+      "address": "0x6caf911a52ee68123a4d832b9ccda58a9ac129f6",
+      "emoji": "🍊",
+      "grade": 1,
+      "priceChef": 0.00108620701240634,
+      "supplyProgress": 0.019523700251808152,
+      "volume24hChef": 1996281.7682112532,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 100,
+      "watchScore": 36.53,
+      "cargoScore": 113,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfWHEAT",
+      "address": "0x96cc7e5b9626880db5564cad60092e1b31a3a381",
+      "emoji": "🌾",
+      "grade": 1,
+      "priceChef": 0.003553529299168404,
+      "supplyProgress": 0.2766166821859162,
+      "volume24hChef": 91070166.86058794,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 100,
+      "watchScore": 53.09,
+      "cargoScore": 113,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfBEANMIX",
+      "address": "0xadffb4f533d2a3c43f5f6f90f65ae946b1462de2",
+      "emoji": "🫘",
+      "grade": 1,
+      "priceChef": 0.001066429189970573,
+      "supplyProgress": 0.015526301665849269,
+      "volume24hChef": 0,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 0.34,
+      "cargoScore": 113,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "24h volume is thin"
+      ]
+    },
+    {
+      "ticker": "cfSPICEMIX",
+      "address": "0xc512de19d86a5d6cc711a69ebdba5a567b246a77",
+      "emoji": "🫙",
+      "grade": 1,
+      "priceChef": 0.001066429189970573,
+      "supplyProgress": 0.015994220211872707,
+      "volume24hChef": 0,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 0.35,
+      "cargoScore": 113,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "24h volume is thin"
+      ]
+    },
+    {
+      "ticker": "cfSALT",
+      "address": "0xed5adcd1dad7df1af63eaa6d2ddfcff19e879233",
+      "emoji": "🧂",
+      "grade": 1,
+      "priceChef": 0.001642387432907316,
+      "supplyProgress": 0.10804716143890546,
+      "volume24hChef": 2672651.552079139,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 47.37,
+      "cargoScore": 113,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfSUGAR",
+      "address": "0x0acb4a0fdadbbac85c98e74ef5fe0366860e1eb7",
+      "emoji": "🍬",
+      "grade": 1,
+      "priceChef": 0.002163636440445739,
+      "supplyProgress": 0.1690365048414466,
+      "volume24hChef": 3208807.520943732,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 100,
+      "watchScore": 41.26,
+      "cargoScore": 113,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfPANTRYMIX",
+      "address": "0xf00432326e62b9cb075babf757ca5dc95d50f195",
+      "emoji": "🫙",
+      "grade": 1,
+      "priceChef": 0.001066429189970573,
+      "supplyProgress": 0.015532396772829771,
+      "volume24hChef": 0,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 0.34,
+      "cargoScore": 113,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "24h volume is thin"
+      ]
+    },
+    {
+      "ticker": "cfPORK",
+      "address": "0xcc8b0972f429e473a918b03726dfc7b538ce2f85",
+      "emoji": "🥩",
+      "grade": 2,
+      "priceChef": 0.008824760033651066,
+      "supplyProgress": 0.10686268050271704,
+      "volume24hChef": 4067925.103577813,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 48.3,
+      "watchScore": 48.62,
+      "cargoScore": 111.43,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfLETTUCE",
+      "address": "0x6433495bf0712321b3f192f7b0b0a7ead43c169f",
+      "emoji": "🥬",
+      "grade": 2,
+      "priceChef": 0.009310641257229921,
+      "supplyProgress": 0.11622711540467374,
+      "volume24hChef": 22376043.84364868,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 100,
+      "watchScore": 46.01,
+      "cargoScore": 111.25,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    }
+  ],
+  "riskRadar": [
+    {
+      "ticker": "cfCAVIAR",
+      "address": "0x3b5938a5cb4c047ccf20721dd94a40f236696a1c",
+      "emoji": "🫧",
+      "grade": 5,
+      "priceChef": 3.3854077296372087,
+      "supplyProgress": 0.46080175510059396,
+      "volume24hChef": 1658583.6334610337,
+      "change24hPct": 7.957399003982592,
+      "change12hPct": 7.957399003982592,
+      "topBuyerConcentration24hPct": 99,
+      "watchScore": 53.63,
+      "cargoScore": 50.2,
+      "signals": [],
+      "missingFields": [],
+      "notes": [
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfBEEF",
+      "address": "0xcb1709bdb1483bf47a4bf17203d8ff04f2150c33",
+      "emoji": "🥩",
+      "grade": 4,
+      "priceChef": 0.299969058680846,
+      "supplyProgress": 0.2612896831905038,
+      "volume24hChef": 5873561.796681343,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 100,
+      "watchScore": 45.13,
+      "cargoScore": 94.19,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfAVOCADO",
+      "address": "0x6f2dfeb089c5eb81b22256a17fdb6eb1830c4072",
+      "emoji": "🥑",
+      "grade": 4,
+      "priceChef": 0.3126315206840646,
+      "supplyProgress": 0.2683831950959967,
+      "volume24hChef": 4741726.681636055,
+      "change24hPct": 23.24730682487623,
+      "change12hPct": 28.880306842624364,
+      "topBuyerConcentration24hPct": 91.1,
+      "watchScore": 187.03,
+      "cargoScore": 91,
+      "signals": [
+        "VOLUME_SPIKE_24H",
+        "MOMENTUM_12H"
+      ],
+      "missingFields": [],
+      "notes": [
+        "24h vol 6.8× daily season avg",
+        "+28.9% in 12h",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfDUCK",
+      "address": "0x9e53cc592220506512f2dbbb6b17433acfefebc1",
+      "emoji": "🦆",
+      "grade": 3,
+      "priceChef": 0.020103052343583845,
+      "supplyProgress": 0.11459622643335392,
+      "volume24hChef": 25601836.353051815,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 94.9,
+      "watchScore": 46.38,
+      "cargoScore": 108.57,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfLAMB",
+      "address": "0xe819f1c1678e2678a942cb7ae983955cbbbd1c42",
+      "emoji": "🐑",
+      "grade": 3,
+      "priceChef": 0.0221730324028944,
+      "supplyProgress": 0.13152068247661422,
+      "volume24hChef": 4912574.179605796,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 49.73,
+      "cargoScore": 108.23,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfGARLIC",
+      "address": "0x990cbc01f190abd1c9f0e9f2a7a093f7d029ccc3",
+      "emoji": "🧄",
+      "grade": 3,
+      "priceChef": 0.017143401052003505,
+      "supplyProgress": 0.08906742738991642,
+      "volume24hChef": 6220622.365708141,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 100,
+      "watchScore": 41.52,
+      "cargoScore": 109.13,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfNAPACABBAGE",
+      "address": "0x792a40b4f313937ec8b59e840f01fc3513b47dc3",
+      "emoji": "🥦",
+      "grade": 3,
+      "priceChef": 0.022446336934818432,
+      "supplyProgress": 0.13256800089550067,
+      "volume24hChef": 4637331.015674222,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 100,
+      "watchScore": 41.58,
+      "cargoScore": 108.19,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfSTRAWBERRY",
+      "address": "0xe45e37bea725807b856fe013604258b2d1256c0e",
+      "emoji": "🍓",
+      "grade": 3,
+      "priceChef": 0.021112688862657138,
+      "supplyProgress": 0.12238575782272769,
+      "volume24hChef": 6342084.597114953,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 50.31,
+      "cargoScore": 108.4,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    },
+    {
+      "ticker": "cfOLIVE",
+      "address": "0x59fb98050e982a1c5ce6cc2771f35a0bc9492f6e",
+      "emoji": "🫒",
+      "grade": 3,
+      "priceChef": 0.011583628807878736,
+      "supplyProgress": 0.024408867716120386,
+      "volume24hChef": 1183044.0702288658,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 100,
+      "watchScore": 35.05,
+      "cargoScore": 110.49,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct",
+        "buyer concentration is high"
+      ]
+    },
+    {
+      "ticker": "cfBUTTER",
+      "address": "0xee38066da45a92a762f249913bad6605f789dac0",
+      "emoji": "🧈",
+      "grade": 3,
+      "priceChef": 0.021903055601788415,
+      "supplyProgress": 0.12967822125835787,
+      "volume24hChef": 2970443.1415777104,
+      "change24hPct": 0,
+      "change12hPct": 0,
+      "topBuyerConcentration24hPct": 0,
+      "watchScore": 48.16,
+      "cargoScore": 108.28,
+      "signals": [],
+      "missingFields": [
+        "price_change_24h_pct",
+        "price_change_12h_pct"
+      ],
+      "notes": [
+        "sparse data: missing price_change_24h_pct, price_change_12h_pct"
+      ]
+    }
+  ],
+  "disclaimer": "Signal report only. No guaranteed-profit claims.",
+  "markdown": "# Galleywatch Bazaar Signal Report\n\nGenerated: 2026-05-24T02:26:30.170Z\nSource: https://www.chefuniverse.io/api/v1/agent_bazaar\nSource generated: 2026-05-24T02:26:30.170Z\nBlock: 46397361\nPosture: selective\nRaw snapshot SHA-256: 9c094ed9fcfb3557ce5ea6dfd446e7f699cd5fdeff032166cbe7c71bacd5d8f3\n\n## Watchlist\n- cfAVOCADO: watch 187.03, VOLUME_SPIKE_24H, MOMENTUM_12H, 23.25% 24h, 4.74M CHEF volume.\n- cfCAVIAR: watch 53.63, no named signal, 7.96% 24h, 1.66M CHEF volume.\n- cfWHEAT: watch 53.09, no named signal, 0% 24h, 91.07M CHEF volume.\n- cfCHEESE: watch 52.88, no named signal, 0% 24h, 13.84M CHEF volume.\n- cfTRUFFLE: watch 51.85, no named signal, 5.94% 24h, 233,635.05 CHEF volume.\n\n## Cargo Candidates\n- cfMEATMIX: cargo 113, grade 1, price 0.0017 CHEF, supply 11.03%.\n- cfFRUITMIX: cargo 113, grade 1, price 0.0011 CHEF, supply 1.95%.\n- cfWHEAT: cargo 113, grade 1, price 0.0036 CHEF, supply 27.66%.\n- cfBEANMIX: cargo 113, grade 1, price 0.0011 CHEF, supply 1.55%.\n- cfSPICEMIX: cargo 113, grade 1, price 0.0011 CHEF, supply 1.6%.\n\n## Replay Evidence\n- Public replay bundle: `replay/latest/`.\n- Pinned raw snapshot: `replay/latest/raw-snapshot.json`.\n- Manifest with raw, analysis, and report hashes: `replay/latest/manifest.json`.\n- Live command: `npm run report:write`.\n- Pinned replay command: `npm run report:replay`.\n\n## Scoring Thresholds\n- Watch score: named signal score * 100 + average 24h/12h momentum clamped [-30,30] + log10(24h CHEF volume + 1) * 7 clamped [0,55] + supply progress * 22 clamped [0,22] - 8 when top buyer concentration is above 85%.\n- Cargo score: grade/current_price_chef value density clamped [0,45] + liquidity score clamped [0,50] + supply window bonus: 18 while progress is between 0 and 82%, 6 at or above 82%, otherwise 8.\n- Risk notes: Flags sparse observed fields, buyer concentration at or above 90%, 24h price change at or below -8%, 10k CHEF partial-fill routes, and zero/unknown 24h volume.\n\n## Field Provenance\n- Observed: Chef Universe Bazaar API URL; snapshot generated_at and block_number; ingredient ticker/address/emoji; grade, current_price_chef, progress; volume_24h_chef, price_change_24h_pct, price_change_12h_pct; top_buyer_concentration_24h_pct; liquidity_impact_10k_chef fields; named signals and signal notes.\n- Inferred: watchScore; cargoScore; market posture; risk notes; ranked watchlist and cargo candidates.\n- Not checked: private Chef Universe/community signals; wallet balances or holdings; liquidity outside the public Bazaar API; future price or profit; Discord, Telegram, or X sentiment; real swaps, transfers, or order execution.\n- Missing/stale handling: Observed missing fields are retained as null in summaries. Scoring helpers use neutral fallbacks only for calculations and sparse rows are flagged in risk notes.\n- Snapshot age at analysis time: 0 minutes.\n\n## Risk Notes\n- cfCAVIAR: buyer concentration is high.\n- cfBEEF: sparse data: missing price_change_24h_pct, price_change_12h_pct; buyer concentration is high.\n- cfAVOCADO: 24h vol 6.8× daily season avg; +28.9% in 12h; buyer concentration is high.\n- cfDUCK: sparse data: missing price_change_24h_pct, price_change_12h_pct; buyer concentration is high.\n- cfLAMB: sparse data: missing price_change_24h_pct, price_change_12h_pct.\n- cfGARLIC: sparse data: missing price_change_24h_pct, price_change_12h_pct; buyer concentration is high.\n\nThis report is an agent-generated market readout, not financial advice or a guaranteed-profit claim."
+}

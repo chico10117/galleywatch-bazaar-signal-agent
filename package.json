@@ -8,6 +8,7 @@
     "start": "npx vercel dev",
     "report": "node scripts/report.mjs",
     "report:write": "node scripts/report.mjs --write",
+    "report:replay": "node scripts/report.mjs --from replay/latest/raw-snapshot.json",
     "check": "node --check lib/analyze.js && node --check api/bazaar.js && node --check api/report.js && node --check scripts/report.mjs"
   },
   "engines": {
