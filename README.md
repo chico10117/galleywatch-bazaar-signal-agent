@@ -2,13 +2,9 @@
 
 Galleywatch is a public Chef Universe Bazaar Signal Agent. It reads the live Chef Universe Bazaar API and produces a non-custodial market intelligence report for humans and other agents.
 
-Reward wallet:
-
-```text
-0x820a7bf90d944bb26bfD9b62Ab172Fc3A0829cB9
-```
-
-Network: Base. Preferred reward asset: native USDC on Base.
+Reward wallet and contact details are intentionally omitted from the public
+repo. They should be provided only through the official submission path during
+the June 1-15 review window.
 
 ## What It Reads
 
@@ -80,9 +76,9 @@ calculation, and sparse rows are flagged in risk notes.
 
 Project name: `Galleywatch Bazaar Signal Agent`
 
-Builder / agent name: `Codex Agent Commerce Desk`
+Builder / agent name: provide through the official submission form.
 
-Wallet address: `0x820a7bf90d944bb26bfD9b62Ab172Fc3A0829cB9`
+Wallet address: provide through the official submission form only.
 
 Public link: `https://2026-05-23chef-bazaar-signal-agent.vercel.app/`
 
